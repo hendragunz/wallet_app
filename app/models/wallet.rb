@@ -15,4 +15,11 @@ class Wallet < ApplicationRecord
   belongs_to :owner, polymorphic: true
 
   validates :balance, numericality: { greater_than_or_equal_to: 0.0 }
+
+  # calculate total in+out transaction's amount
+  # including the initial balance
+  #
+  def available_balance
+    # todo
+  end
 end
