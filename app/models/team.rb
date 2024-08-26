@@ -9,6 +9,8 @@
 #  updated_at  :datetime         not null
 #
 class Team < ApplicationRecord
+  include Walletable
+
   validates :name, presence: true
   has_one :wallet, as: :owner
 end

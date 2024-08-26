@@ -11,6 +11,8 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
+  include Walletable
+
   validates :first_name,  presence: true
   validates :last_name,   presence: true
   validates :email,       presence: true

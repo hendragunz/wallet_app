@@ -7,3 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+# Create test users
+# ------------------------------------------------------------------------
+[{
+  first_name: "First",
+  last_name: "last",
+  email: "first@example.com"
+}].each do |obj|
+  user = User.find_or_initialize_by(email: obj[:email])
+  user.update(
+    first_name: obj[:first_name],
+    last_name: obj[:last_name]
+  )
+end
