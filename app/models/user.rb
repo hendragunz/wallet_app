@@ -12,6 +12,7 @@
 #
 class User < ApplicationRecord
   include Walletable
+  has_secure_password :password, validations: true
 
   validates :first_name,  presence: true
   validates :last_name,   presence: true

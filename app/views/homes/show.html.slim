@@ -1,0 +1,7 @@
+h1 Home
+
+- if current_user
+  p= "You're logged as #{current_user.email}"
+  = link_to 'Logout', users_logout_path, data: { turbo_method: :delete }
+- else
+  = link_to 'Login', users_login_path

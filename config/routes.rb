@@ -7,6 +7,12 @@ Rails.application.routes.draw do
 
   mount Rest::Base => '/'
 
+  namespace :users do
+    get "login" => "sessions#new"
+    post "login" => "sessions#create"
+    delete "logout" => "sessions#destroy"
+  end
+
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "homes#show"
 end

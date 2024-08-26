@@ -14,11 +14,13 @@
 [{
   first_name: "First",
   last_name: "last",
-  email: "first@example.com"
+  email: "first@example.com",
+  password: "pass123!!"
 }].each do |obj|
   user = User.find_or_initialize_by(email: obj[:email])
   user.update(
     first_name: obj[:first_name],
-    last_name: obj[:last_name]
+    last_name: obj[:last_name],
+    password: obj[:password]
   )
 end
