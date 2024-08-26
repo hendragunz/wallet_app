@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_20_122816) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_20_123108) do
   create_table "stocks", force: :cascade do |t|
     t.string "name"
     t.integer "number"
@@ -23,6 +23,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_20_122816) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string "type"
+    t.integer "from_wallet_id"
+    t.integer "to_wallet_id"
+    t.decimal "amount", precision: 10, scale: 2, default: "0.0"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["from_wallet_id"], name: "index_transactions_on_from_wallet_id"
+    t.index ["to_wallet_id"], name: "index_transactions_on_to_wallet_id"
   end
 
   create_table "users", force: :cascade do |t|

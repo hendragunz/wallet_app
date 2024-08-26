@@ -4,6 +4,11 @@ ruby "3.3.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.4"
+gem 'grape', '~> 2.1'
+gem 'grape-entity'
+gem 'grape_on_rails_routes'  # run bundle exec rake grape:routes
+                             # to see the API Routes
+                             #
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
