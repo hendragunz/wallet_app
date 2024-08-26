@@ -1,6 +1,8 @@
 class Transaction < ApplicationRecord
-  validates :from_wallet
-  validates :to_wallet
+
+  belongs_to :from_wallet,  class_name: 'Wallet'
+  belongs_to :to_wallet,    class_name: 'Wallet'
 
   validates :amount, numericality: { greater_than: 0.0 }
+
 end
