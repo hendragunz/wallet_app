@@ -6,7 +6,7 @@
 #  first_name      :string
 #  last_name       :string
 #  email           :string
-#  hashed_password :string
+#  password_digest :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #

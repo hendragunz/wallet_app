@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_26_085907) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_27_052601) do
   create_table "stocks", force: :cascade do |t|
     t.string "name"
     t.integer "number"
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_26_085907) do
   create_table "wallets", force: :cascade do |t|
     t.string "owner_type"
     t.integer "owner_id"
-    t.decimal "balance", precision: 10, scale: 2, default: "0.0"
+    t.decimal "initial_balance", precision: 10, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_type", "owner_id"], name: "index_wallets_on_owner"
