@@ -6,6 +6,7 @@ module Rest::V1
       "Hello from me!"
     end
 
-    mount Rest::V1::Transactions
+    mount Rest::V1::Users::Transactions
+    # mount Rest::V1::Teams::Transactions # todo
   end
 end

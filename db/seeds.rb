@@ -24,3 +24,17 @@
     password: obj[:password]
   )
 end
+
+
+
+# Create test teams
+# ------------------------------------------------------------------------
+[{
+  name: "Power Rangers",
+  description: "Kid's superheroes"
+}].each do |obj|
+  team = Team.find_or_initialize_by(name: obj[:name])
+  team.update(
+    description: obj[:description]
+  )
+end

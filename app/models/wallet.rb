@@ -20,6 +20,6 @@ class Wallet < ApplicationRecord
   # including the initial balance
   #
   def available_balance
-    balance + inbound_transactions.sum(:amount) - outbound_transactions.sum(:amount)
+    initial_balance + inbound_transactions.sum(:amount) - outbound_transactions.sum(:amount)
   end
 end
